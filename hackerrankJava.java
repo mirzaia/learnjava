@@ -23,9 +23,29 @@ class Result {
     
     public static void plusMinus(List<Integer> arr) {
         // deklarasi variabel
-        int n;
+        /*
+         * int n; int i = 0; int jawaban; double positiveAnswer; double negativeAnswer;
+         * double zeroAnswer;
+         */
+
+        Scanner sc = new Scanner(System.in); 
+        int pos = 0;
+        int neg = 0;
+        int zer = 0;
         int i;
+        int n;
         int jawaban;
+
+        n = sc.nextInt();
+        for(i=0; i<n; i++){
+            jawaban = sc.nextInt();
+            arr = arr.add( 
+        }
+        
+
+
+        
+        
         // List<Integer> arr = new ArrayList<Integer>();
         // int x;
         // List<Integer> thisArr = new ArrayList<Integer>();
@@ -33,57 +53,63 @@ class Result {
 
         
         // Deklarasi objek scanner
-        Scanner sc = new Scanner(System.in);
+        
         
         // Input jumlah elemen array
-        System.out.print("Masukan jumlah elemen yang diinginkan");
-        n = sc.nextArr(); // objek scanner untuk input elemen array
+        // System.out.print("Masukan jumlah elemen yang diinginkan");
+        // n = sc.nextInt(); // objek scanner untuk input elemen array
         
         
         // Input member array
         // arr = new int[n];
-        System.out.print("Masukan anggota array ini");
+        // System.out.print("Masukan anggota array ini");
         // arr.nextInt();
         
-        for (i=0; i<n; i++){
-        jawaban = sc.nextLine();
-        arr.add(jawaban);
+        // for (i=0; i<n; i++){
+        
+        // jawaban = sc.nextInt();
+        // arr.add(jawaban);
         // List<Integer> arr[x] = sc.nextInt();
-        } // objek scanner untuk input anggota array
+        // } // objek scanner untuk input anggota array
         
         
         
         // Menghitung jumlah elemen masing2
-        long positive = arr.stream().count(i > 0);
-        long negative = arr.stream().count(i < 0);
-        long zero = arr.stream().count(i == 0);
+        
+        //long positive = arr.stream().count();
+        // long negative = arr.stream().count();
+        // long zero = arr.stream().count();
+
+        // long positive = arr.stream().count(i > 0);
+        // long negative = arr.stream().count(i < 0);
+        // long zero = arr.stream().count(i == 0);
         
         
         // Menghitung rasio masing2
-        double ratioPositive = positive/n;
-        double ratioNegative = negative/n;
-        double ratioZero = zero/n;
+        //double ratioPositive = Math.floorDiv(positive, n);
+        //double ratioNegative = Math.floorDiv(negative, n);
+        //double ratioZero = Math.floorDiv(zero, n);
         
         
         
         // Deklarasi decimal format untuk 6 digit decimal
-        DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(6);
+        //DecimalFormat df = new DecimalFormat();
+        //df.setMaximumFractionDigits(6);
         
-        
+        //positiveAnswer = df.format(ratioPositive);
         
         
         // Print ratio of positive number
-        System.out.print("Rasio dari elemen yang bernilai positif = ");
-        System.out.println(df.format(ratioPositive));
+        // System.out.print("Rasio dari elemen yang bernilai positif = ");
+        //System.out.println(df.format(ratioPositive));
         
         // Print ratio of negative number
-        System.out.print("Rasio dari elemen yang bernilai negatif = ");
-        System.out.println(df.format(ratioNegative));
+        // System.out.print("Rasio dari elemen yang bernilai negatif = ");
+        //System.out.println(df.format(ratioNegative));
         
         // Print ratio of zero number
-        System.out.print("Rasio dari elemen yang bernilai zero = ");
-        System.out.println(df.format(ratioZero));
+        // System.out.print("Rasio dari elemen yang bernilai zero = ");
+        //System.out.println(df.format(ratioZero));
         
         
         
@@ -94,7 +120,7 @@ class Result {
 
 }
 
-public class Solution {
+/* public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -108,4 +134,4 @@ public class Solution {
 
         bufferedReader.close();
     }
-}
+} */
