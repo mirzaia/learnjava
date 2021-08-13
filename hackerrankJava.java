@@ -1,137 +1,96 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
+//import java.io.*;
+//import java.math.*;
+//import java.security.*;
 import java.text.*;
 import java.util.*;
-import java.lang.Object.*;
-import java.util.concurrent.*;
-import java.util.function.*;
+//import java.lang.Object.*;
+//import java.util.concurrent.*;
+//import java.util.function.*;
 import java.util.Scanner;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
+//import java.util.regex.*;
+//import java.util.stream.*;
+//import static java.util.stream.Collectors.joining;
+//import static java.util.stream.Collectors.toList;
 
 class Result {
 
-    /*
-     * Complete the 'plusMinus' function below.
-     *
-     * The function accepts INTEGER_ARRAY arr as parameter.
-     */
-     
     
-    public static void plusMinus(List<Integer> arr) {
-        // deklarasi variabel
-        /*
-         * int n; int i = 0; int jawaban; double positiveAnswer; double negativeAnswer;
-         * double zeroAnswer;
-         */
+    public static void plusMinus() {
+    
 
-        Scanner sc = new Scanner(System.in); 
-        int pos = 0;
-        int neg = 0;
-        int zer = 0;
-        int i;
-        int n;
-        int jawaban;
+        Scanner sc = new Scanner(System.in); // scanner declaration
+        List <Integer> arr = new ArrayList<Integer>(); // array declaration
+        float pos = 0; // positive declaration
+        float neg = 0; // negative declaration
+        float zer = 0; // zero declaration
+        int i; // iterator
+        int n; // max array elements
+        
+         
+        
+        float hasilPos; // result of the positive
+        float hasilNeg; // result of the negative
+        float hasilZer; // result of the zero
+        DecimalFormat df = new DecimalFormat(); // decimal format 
 
-        n = sc.nextInt();
-        for(i=0; i<n; i++){
-            jawaban = sc.nextInt();
-            arr = arr.add( 
+        n = sc.nextInt(); // input number of array element
+        
+        for(i=0; i<1; i++){
+        
+            for( int j = 0; j < n; j++){
+                 arr.add(sc.nextInt());
+            }  // input array element
+            //arr.add(sc.nextInt());
+        } 
+        sc.close();
+
+        for (i=0; i<n; i++){
+            if(i > 0){ // if it is positive number, then
+                pos++;
+
+            }
+            else if(i == 0){ // if it is zero numbers, then
+            zer++;
+            }
+            else { // if it is negative numbers, then
+            neg++;
+            }
         }
-        
+            
+        // calculation
+        hasilPos = pos/n;
+        hasilNeg = neg/n;
+        hasilZer = zer/n;
 
+        // set decimal number to 6 
+        df.setMaximumFractionDigits(6);
+        
+        String hasilPosDec = df.format(hasilPos); // convert to decimal 6
+        String hasilNegDec = df.format(hasilNeg);
+        String hasilZerDec = df.format(hasilZer);
 
         
+        float floatPos = Float.parseFloat(hasilPosDec); // convert to float
+        float floatNeg = Float.parseFloat(hasilNegDec);
+        float floatZer = Float.parseFloat(hasilZerDec);
         
-        // List<Integer> arr = new ArrayList<Integer>();
-        // int x;
-        // List<Integer> thisArr = new ArrayList<Integer>();
-        // List<Integer> arr = new ArrayList<Integer>();
+        System.out.println(floatPos); // print result
+        System.out.println(floatNeg);
+        System.out.println(floatZer);
 
-        
-        // Deklarasi objek scanner
-        
-        
-        // Input jumlah elemen array
-        // System.out.print("Masukan jumlah elemen yang diinginkan");
-        // n = sc.nextInt(); // objek scanner untuk input elemen array
-        
-        
-        // Input member array
-        // arr = new int[n];
-        // System.out.print("Masukan anggota array ini");
-        // arr.nextInt();
-        
-        // for (i=0; i<n; i++){
-        
-        // jawaban = sc.nextInt();
-        // arr.add(jawaban);
-        // List<Integer> arr[x] = sc.nextInt();
-        // } // objek scanner untuk input anggota array
-        
-        
-        
-        // Menghitung jumlah elemen masing2
-        
-        //long positive = arr.stream().count();
-        // long negative = arr.stream().count();
-        // long zero = arr.stream().count();
+        sc.close();
 
-        // long positive = arr.stream().count(i > 0);
-        // long negative = arr.stream().count(i < 0);
-        // long zero = arr.stream().count(i == 0);
+        //System.out.println(hasilPosDec); // print result
+        //System.out.println(hasilNegDec);
+        //System.out.println(hasilZerDec);
         
-        
-        // Menghitung rasio masing2
-        //double ratioPositive = Math.floorDiv(positive, n);
-        //double ratioNegative = Math.floorDiv(negative, n);
-        //double ratioZero = Math.floorDiv(zero, n);
-        
-        
-        
-        // Deklarasi decimal format untuk 6 digit decimal
-        //DecimalFormat df = new DecimalFormat();
-        //df.setMaximumFractionDigits(6);
-        
-        //positiveAnswer = df.format(ratioPositive);
-        
-        
-        // Print ratio of positive number
-        // System.out.print("Rasio dari elemen yang bernilai positif = ");
-        //System.out.println(df.format(ratioPositive));
-        
-        // Print ratio of negative number
-        // System.out.print("Rasio dari elemen yang bernilai negatif = ");
-        //System.out.println(df.format(ratioNegative));
-        
-        // Print ratio of zero number
-        // System.out.print("Rasio dari elemen yang bernilai zero = ");
-        //System.out.println(df.format(ratioZero));
-        
-        
-        
-        
-    // Write your code here
-
     }
+
+
+
+public static void main(String[] args){
+        plusMinus();
+}
 
 }
 
-/* public class Solution {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
-
-        List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
-
-        Result.plusMinus(arr);
-
-        bufferedReader.close();
-    }
-} */
