@@ -83,6 +83,18 @@ public class sparseArrays {
          * System.out.println("Freq of queries in strings: " +
          * Collections.frequency(strings, "abc"));
          */
+
+        // Create a new list that contain the same elements from both list
+        List<String> sameElements = new ArrayList<>(strings);
+        sameElements.retainAll(queries);
+        System.out.print("10. Queries elements in strings: ");
+        System.out.println(sameElements);
+
+        // Count the number of sameElements elements
+        Map<String, Integer> countsElements = sameElements.parallelStream()
+                .collect(Collectors.toConcurrentMap(w -> w, w -> 1, Integer::sum));
+        System.out.print("11. Count the number of sameELements elements: ");
+        System.out.println(countsElements);
     }
 
     public static void main(String[] args) throws Exception {
